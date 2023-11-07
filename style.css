@@ -14,13 +14,25 @@ body{
 .gridContainer{
     border: solid black;
     height: 37em;
-    width: 70%;  
+    width: 50%;  
     background-color: aquamarine;
-    margin-left: 2px;
+    margin-left: 20px;
     display: grid;
     /* grid-template-columns: auto auto auto auto auto; */
-     grid-template-columns: repeat(5 ,1fr);
+     grid-template-columns: repeat(6 ,1fr);
+    /* position:relative; */
+     background: url("https://www.playscapeengineering.co.uk/wp-content/uploads/2015/10/Snakes-Ladders-1-36-Solid-800x600.jpg") transparent;
+     background-position: center;
+    
+
 }
 .gridchild{
     border: solid black;
+    z-index: -1;
 }
+/* img{
+    position: absolute;
+    z-index: 1;
+    
+
+} */
