@@ -76,10 +76,10 @@ let p2 = document.getElementById('player2').value
 //    }
 
 
-dicebtn.addEventListener('click', () => {
-    roll()
-})
-
+// dicebtn.addEventListener('click', () => {
+//     roll()
+// })
+dicebtn.addEventListener('click',roll)
 
 
 
