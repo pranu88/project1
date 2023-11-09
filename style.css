@@ -73,6 +73,7 @@ z-index: 2;
     text-align: center;
     font-size: 30px;
     margin-left: 2em;
+    /* margin-top: 2em; */
 }
 .dice{
     width :4em;
@@ -82,4 +83,12 @@ z-index: 2;
     border-radius: 5px;
     cursor: pointer;
     margin-left: 4em;
+}
+#player1, #player2{
+height: 2em;
+width: 20em;
+background-color: beige;
+border-radius: 6px;
+margin-top: 2em;
+margin-left: 2em;
 }
