@@ -16,7 +16,7 @@ const ladders = {
     19:31
     }
 
-// cols to check
+// columns to check
 const col1 = {
     1:true,
     12:true,
@@ -217,6 +217,8 @@ else if ((rownum === 5) || (player.position == 36)){
 dicebtn.addEventListener('click',roll)
 resetbtn.addEventListener('click',reset)
 quitbtn.addEventListener('click',quit)
+
+
 // function for reloading page
 function reset(){
     location.reload()
