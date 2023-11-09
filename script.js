@@ -5,6 +5,7 @@ let dicebtn = document.querySelector('.dice')
 let cPlayer = document.querySelector('#cp')
 let msg = document.querySelector('#message')
 let resetbtn = document.querySelector('.reset')
+let quitbtn = document.querySelector('.quit')
 //  snakes and ladders objects
 const snakes = {
      34:13,
@@ -203,8 +204,13 @@ else if ((rownum === 5) || (player.position == 36)){
 // })
 dicebtn.addEventListener('click',roll)
 resetbtn.addEventListener('click',reset)
+quitbtn.addEventListener('click',quit)
 // function for reloading page
 function reset(){
     location.reload()
 }
 
+// funtion to quit page
+function quit(){
+    window.close()
+}
