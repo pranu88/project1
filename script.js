@@ -128,98 +128,84 @@ function roll(){
      }
      else if(player.position < 36){
      if (player.position in snakes){
-        player.position = snakes[player.position]
-        // display message encounterd snake and moved backwards
+        player.position = snakes[player.position]        
         message(`${player.name} encountered snake moving back to ${player.position}`)
        
      }
      else if(player.position in ladders){
-        player.position = ladders[player.position]
-        // display message climbed ladder and moved forward
+        player.position = ladders[player.position]        
         message(`${player.name} climbed ladder moved to ${player.position}`)
      }
-     else {       
-        // diplay player at position ${player.position}
+     else {      
+        
         message(`${player.name} is at ${player.position}`)
         
      }
+
     let pawn2 = document.getElementById('pawn2')
-     
     
-if (player.position in col1){
-    // document.getElementById(`${player.name}`)
+    // check player position in columns
     
-    //document.getElementById(`${player.name}`).style.left='200px'
-    pawn.style.left='200px'
-    // pa1.style.left='200px'
-    // (player.name).style.left = '200px'
-    if (pawn === pawn2){
-    // {document.getElementById(`${player.name}`)
-    pawn.style.left = '75px'}
+if (player.position in col1){   
+    pawn.style.left='200px'  
+    if (pawn === pawn2){   
+    pawn.style.left = '75px'
+    }
 }
-if (player.position in col2){
-    // document.getElementById(`${player.name}`)
+if (player.position in col2){   
     pawn.style.left = '300px'
     if (pawn === pawn2){
-    // {document.getElementById(`${player.name}`)
-    pawn.style.left = '175px'}
+    pawn.style.left = '175px'
     }
-if (player.position in col3){
-    // document.getElementById(`${player.name}`)
-    pawn.style.left = '400px'
-    if (pawn === pawn2){
-    // {document.getElementById(`${player.name}`)
-    pawn.style.left = '275px'}
 }
-if (player.position in col4){
-    // document.getElementById(`${player.name}`)
+if (player.position in col3){   
+    pawn.style.left = '400px'
+    if (pawn === pawn2){    
+    pawn.style.left = '275px'
+    }
+}
+if (player.position in col4){    
     pawn.style.left = '500px'
     if (pawn === pawn2)
     {
-        // document.getElementById(`${player.name}`)
+       
     pawn.style.left = '375px'}
 }
 if (player.position in col5){
-    // document.getElementById(`${player.name}`)
+    
     pawn.style.left = '600px'
     if (pawn === pawn2)
-    {
-        // document.getElementById(`${player.name}`)
-       pawn.style.left = '475px'}
+    {        
+       pawn.style.left = '475px'
+    }
 }
-if (player.position in col6){
-    // document.getElementById(`${player.name}`)
+if (player.position in col6){    
     pawn.style.left = '700px'
     if (pawn === pawn2)
-    {
-        // document.getElementById(`${player.name}`)
-        pawn.style.left = '575px'}
+    {    
+        pawn.style.left = '575px'
+    }
 }
 
+// chech player position in rows
 let rownum = Math.floor(player.position / 6);
 
 if ((rownum === 0) || (player.position == 6)){
-    // document.getElementById(`${player.name}`)
     pawn.style.top = '50px'
 }
-else if ((rownum === 1) || (player.position == 12)){
-    // document.getElementById(`${player.name}`)
+else if ((rownum === 1) || (player.position == 12)){    
   pawn.style.top = '-50px'
 }
-else if ((rownum === 2) || (player.position == 18)){
-    // document.getElementById(`${player.name}`)
+else if ((rownum === 2) || (player.position == 18)){    
    pawn.style.top = '-150px'
 }
 else if ((rownum === 3) || (player.position == 19)){
-    // document.getElementById(`${player.name}`)
     pawn.style.top = '-250px'
 }
-else if ((rownum === 4) || (player.position == 30)){
-    // document.getElementById(`${player.name}`)
+else if ((rownum === 4) || (player.position == 30)){    
     pawn.style.top = '-350px'
 }
 else if ((rownum === 5) || (player.position == 36)){
-    // document.getElementById(`${player.name}`)
     pawn.style.top = '-450px'
 }
 
@@ -228,10 +214,6 @@ else if ((rownum === 5) || (player.position == 36)){
 
    }
 
-
-// dicebtn.addEventListener('click', () => {
-//     roll()
-// })
 dicebtn.addEventListener('click',roll)
 resetbtn.addEventListener('click',reset)
 quitbtn.addEventListener('click',quit)
