@@ -6,6 +6,10 @@ let cPlayer = document.querySelector('#cp')
 let msg = document.querySelector('#message')
 let resetbtn = document.querySelector('.reset')
 let quitbtn = document.querySelector('.quit')
+
+// variable for round count
+let rollcnt = 0
+
 //  snakes and ladders objects
 const snakes = {
      34:13,
@@ -86,14 +90,12 @@ function roll(){
     
     // assign text input to variable
     let p1 = document.getElementById('player1').value
-    let p2 = document.getElementById('player2').value   
-    let pawn1 = document.getElementById('pawn1')
-    let pawn2 = document.getElementById('pawn2')
-    
-    
-
+    let p2 = document.getElementById('player2').value     
     player1.name = p1
     player2.name = p2
+    // pawn movements
+    let pawn1 = document.getElementById('pawn1')
+    let pawn2 = document.getElementById('pawn2')
     // dice value
     let num = Math.floor(Math.random()*(6 - 1)+ 1)  
     // display dice value
@@ -121,7 +123,15 @@ function roll(){
    function play(player,pawn, moves){
     cPlayer.textContent = `${currentPlayer.name} turn` 
     player.position += moves
-     
+
+    let pawn1 = document.getElementById('pawn1')
+    let pawn2 = document.getElementById('pawn2')
+    
+     if(pawn === pawn1){
+         rollcnt += 1;
+     }
+     document.getElementById('round').textContent = rollcnt
+
      if(player.position > 36){  
         player.position -= moves      
         message(`dice value is morethan expected! ${player.name} will remain in ${player.position} `)
@@ -142,7 +152,7 @@ function roll(){
         
      }
 
-    let pawn2 = document.getElementById('pawn2')
+   
     
     // check player position in columns
     
