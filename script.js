@@ -136,7 +136,7 @@ function roll(){
         player.position -= moves      
         message(`dice value is morethan expected! ${player.name} will remain in ${player.position} `)
      }
-     else if(player.position < 36){
+     else if(player.position <= 36){
      if (player.position in snakes){
         player.position = snakes[player.position]        
         message(`${player.name} encountered snake moving back to ${player.position}`)
