@@ -38,7 +38,7 @@ body{
 } */
 
 
-.pawn1,.pawn2{
+#pawn1,#pawn2{
     width: 30px;
     height: 30px;
     border-radius: 100px;   
@@ -46,19 +46,19 @@ body{
     background-color: yellowgreen;
 }
 
-.pawn1{
+#pawn1{
 position: relative;
 top: 40px;
 transition: all linear 0.5s;
-left: -62px;
+left: -52px;
 z-index: 2;
 
 }
-.pawn2{   
+#pawn2{   
     position: relative;
     top: 40px;    
     transition: all linear 0.5s;
-    left: -10em;
+    left: -152px;
     z-index: 2;
     background-color: blue;
     

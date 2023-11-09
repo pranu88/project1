@@ -3,8 +3,7 @@
 let dicevalue = document.querySelector('#dicevalue')
 let dicebtn = document.querySelector('.dice')
 let cPlayer = document.querySelector('#cp')
-// let p1 = document.getElementById('player1').value
-// let p2 = document.getElementById('player2').value
+
 let msg = document.querySelector('#message')
 //  snakes and ladders objects
 const snakes = {
@@ -34,7 +33,7 @@ let currentPlayer = player1
 // function for dice roll
 function roll(){
     let p1 = document.getElementById('player1').value
-let p2 = document.getElementById('player2').value
+    let p2 = document.getElementById('player2').value   
   player1.name = p1
   player2.name = p2
     let num = Math.floor(Math.random()*(6 - 1)+ 1)    
@@ -44,6 +43,7 @@ let p2 = document.getElementById('player2').value
         message(`${currentPlayer.name} is winner!`)
         dicebtn.disabled = true
     }
+    
     else{
         currentPlayer = currentPlayer === player1 ? player2 : player1
     }
@@ -55,11 +55,15 @@ let p2 = document.getElementById('player2').value
    function play(player,moves){
     cPlayer.textContent = `${currentPlayer.name} turn`
      player.position += moves
-    //  if(player.position <= 36){
+     if(player.position > 36){
+        player.position = player.position
+     }
+     if(player.position < 36){
      if (player.position in snakes){
         player.position = snakes[player.position]
         // display message encounterd snake and moved backwards
         message(`${player.name} encountered snake moving back to ${player.position}`)
+       
      }
      else if(player.position in ladders){
         player.position = ladders[player.position]
@@ -72,8 +76,10 @@ let p2 = document.getElementById('player2').value
         message(`${player.name} is at ${player.position}`)
         // cPlayer.textContent = `${currentPlayer.name} turn`
      }
+     
+    
     }
-//    }
+   }
 
 
 // dicebtn.addEventListener('click', () => {
@@ -83,3 +89,7 @@ dicebtn.addEventListener('click',roll)
 
 
 
+// function for pawns movement
+// function pawnMoves(){
+
+// }
