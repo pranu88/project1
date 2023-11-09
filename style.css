@@ -111,3 +111,10 @@ font-size: 15px;
     cursor: pointer;
     background-color: lightgreen;
 }
+.quit{
+    width: 7em;
+    height: 2em;
+    border-radius: 6px;
+    cursor: pointer;
+    background-color: lightgreen;
+}
