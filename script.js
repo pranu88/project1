@@ -126,11 +126,11 @@ function roll(){
 
     let pawn1 = document.getElementById('pawn1')
     let pawn2 = document.getElementById('pawn2')
-    
+    // round count increment when pawn matches pawn1
      if(pawn === pawn1){
          rollcnt += 1;
      }
-     document.getElementById('round').textContent = rollcnt
+     document.getElementById('round').textContent = 'Round: ' +rollcnt
 
      if(player.position > 36){  
         player.position -= moves      
