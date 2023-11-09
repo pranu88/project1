@@ -3,8 +3,8 @@
 let dicevalue = document.querySelector('#dicevalue')
 let dicebtn = document.querySelector('.dice')
 let cPlayer = document.querySelector('#cp')
-
 let msg = document.querySelector('#message')
+let resetbtn = document.querySelector('.reset')
 //  snakes and ladders objects
 const snakes = {
      34:13,
@@ -94,7 +94,7 @@ function roll(){
     
     play(currentPlayer,num)
     // 
-    console.log('player:' + currentPlayer)
+    // console.log('player:' + currentPlayer)
     if(currentPlayer.position === 36){
         message(`${currentPlayer.name} is winner!`)
         dicebtn.disabled = true
@@ -115,7 +115,8 @@ function roll(){
 //     player.position = 1
   //   debugger;
      if(player.position > 36){
-        player.position = player.position
+        // player.position = player.position
+        message(`dice value is morethan expected! ${player.name} will remain in ${player.position} `)
      }
      if(player.position < 36){
      if (player.position in snakes){
@@ -130,7 +131,7 @@ function roll(){
         message(`${player.name} climbed ladder moved to ${player.position}`)
      }
      else {
-        player.position = player.position
+        // player.position = player.position
         // diplay player at position ${player.position}
         message(`${player.name} is at ${player.position}`)
         // cPlayer.textContent = `${currentPlayer.name} turn`
@@ -201,10 +202,9 @@ else if ((rownum === 5) || (player.position == 36)){
 //     roll()
 // })
 dicebtn.addEventListener('click',roll)
+resetbtn.addEventListener('click',reset)
+// function for reloading page
+function reset(){
+    location.reload()
+}
 
-
-
-// function for pawns movement
-// function pawnMoves(){
-
-// }
