@@ -104,3 +104,10 @@ font-size: 15px;
     font-size: 25px;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
+.reset{
+    width: 7em;
+    height: 2em;
+    border-radius: 6px;
+    cursor: pointer;
+    background-color: lightgreen;
+}
