@@ -80,11 +80,18 @@ msg.textContent = alert
 }
 
 let currentPlayer = player1
+let currentpawn = pawn1
 // function for dice roll
 function roll(){
+    
     // assign text input to variable
     let p1 = document.getElementById('player1').value
     let p2 = document.getElementById('player2').value   
+    let pawn1 = document.getElementById('pawn1')
+    let pawn2 = document.getElementById('pawn2')
+    
+    
+
     player1.name = p1
     player2.name = p2
     // dice value
@@ -93,7 +100,7 @@ function roll(){
     
     dicevalue.innerHTML = num;
     
-    play(currentPlayer,num)
+    play(currentPlayer,currentpawn,num)
     // 
     // console.log('player:' + currentPlayer)
     if(currentPlayer.position === 36){
@@ -103,23 +110,23 @@ function roll(){
     
     else{
         currentPlayer = currentPlayer === player1 ? player2 : player1
+        currentpawn = currentpawn === pawn1 ? pawn2 : pawn1
     }
 
 
 }
+    // ===========================================
    // function for play
  
-   function play(player,moves){
-    cPlayer.textContent = `${currentPlayer.name} turn`
-    //debugger;
-     player.position += moves
-//     player.position = 1
-  //   debugger;
-     if(player.position > 36){
-        // player.position = player.position
+   function play(player,pawn, moves){
+    cPlayer.textContent = `${currentPlayer.name} turn` 
+    player.position += moves
+     
+     if(player.position > 36){  
+        player.position -= moves      
         message(`dice value is morethan expected! ${player.name} will remain in ${player.position} `)
      }
-     if(player.position < 36){
+     else if(player.position < 36){
      if (player.position in snakes){
         player.position = snakes[player.position]
         // display message encounterd snake and moved backwards
@@ -131,66 +138,89 @@ function roll(){
         // display message climbed ladder and moved forward
         message(`${player.name} climbed ladder moved to ${player.position}`)
      }
-     else {
-        // player.position = player.position
+     else {       
         // diplay player at position ${player.position}
         message(`${player.name} is at ${player.position}`)
-        // cPlayer.textContent = `${currentPlayer.name} turn`
+        
      }
-    //debugger;
-     console.log('test1' + player);
-
-debugger;
+    let pawn2 = document.getElementById('pawn2')
+     
+    
 if (player.position in col1){
-    document.getElementById(`${player.name}`).style.left = '200px'
-    if (player.name === 'pawn2')
-    {document.getElementById(`${player.name}`).style.left = '75px'}
+    // document.getElementById(`${player.name}`)
+    
+    //document.getElementById(`${player.name}`).style.left='200px'
+    pawn.style.left='200px'
+    // pa1.style.left='200px'
+    // (player.name).style.left = '200px'
+    if (pawn === pawn2){
+    // {document.getElementById(`${player.name}`)
+    pawn.style.left = '75px'}
 }
 if (player.position in col2){
-    document.getElementById(`${player.name}`).style.left = '300px'
-    if (player.name === 'pawn2')
-    {document.getElementById(`${player.name}`).style.left = '175px'}
-}
+    // document.getElementById(`${player.name}`)
+    pawn.style.left = '300px'
+    if (pawn === pawn2){
+    // {document.getElementById(`${player.name}`)
+    pawn.style.left = '175px'}
+    }
 if (player.position in col3){
-    document.getElementById(`${player.name}`).style.left = '400px'
-    if (player.name === 'pawn2')
-    {document.getElementById(`${player.name}`).style.left = '275px'}
+    // document.getElementById(`${player.name}`)
+    pawn.style.left = '400px'
+    if (pawn === pawn2){
+    // {document.getElementById(`${player.name}`)
+    pawn.style.left = '275px'}
 }
 if (player.position in col4){
-    document.getElementById(`${player.name}`).style.left = '500px'
-    if (player.name === 'pawn2')
-    {document.getElementById(`${player.name}`).style.left = '375px'}
+    // document.getElementById(`${player.name}`)
+    pawn.style.left = '500px'
+    if (pawn === pawn2)
+    {
+        // document.getElementById(`${player.name}`)
+    pawn.style.left = '375px'}
 }
 if (player.position in col5){
-    document.getElementById(`${player.name}`).style.left = '600px'
-    if (player.name === 'pawn2')
-    {document.getElementById(`${player.name}`).style.left = '475px'}
+    // document.getElementById(`${player.name}`)
+    pawn.style.left = '600px'
+    if (pawn === pawn2)
+    {
+        // document.getElementById(`${player.name}`)
+       pawn.style.left = '475px'}
 }
 if (player.position in col6){
-    document.getElementById(`${player.name}`).style.left = '700px'
-    if (player.name === 'pawn2')
-    {document.getElementById(`${player.name}`).style.left = '575px'}
+    // document.getElementById(`${player.name}`)
+    pawn.style.left = '700px'
+    if (pawn === pawn2)
+    {
+        // document.getElementById(`${player.name}`)
+        pawn.style.left = '575px'}
 }
 
 let rownum = Math.floor(player.position / 6);
 
 if ((rownum === 0) || (player.position == 6)){
-    document.getElementById(`${player.name}`).style.top = '50px'
+    // document.getElementById(`${player.name}`)
+    pawn.style.top = '50px'
 }
 else if ((rownum === 1) || (player.position == 12)){
-    document.getElementById(`${player.name}`).style.top = '-50px'
+    // document.getElementById(`${player.name}`)
+  pawn.style.top = '-50px'
 }
 else if ((rownum === 2) || (player.position == 18)){
-    document.getElementById(`${player.name}`).style.top = '-150px'
+    // document.getElementById(`${player.name}`)
+   pawn.style.top = '-150px'
 }
 else if ((rownum === 3) || (player.position == 19)){
-    document.getElementById(`${player.name}`).style.top = '-250px'
+    // document.getElementById(`${player.name}`)
+    pawn.style.top = '-250px'
 }
 else if ((rownum === 4) || (player.position == 30)){
-    document.getElementById(`${player.name}`).style.top = '-350px'
+    // document.getElementById(`${player.name}`)
+    pawn.style.top = '-350px'
 }
 else if ((rownum === 5) || (player.position == 36)){
-    document.getElementById(`${player.name}`).style.top = '-450px'
+    // document.getElementById(`${player.name}`)
+    pawn.style.top = '-450px'
 }
 
 
