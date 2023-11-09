@@ -48,17 +48,17 @@ body{
 
 #pawn1{
 position: relative;
-top: 40px;
+top: 50px;
 transition: all linear 0.5s;
-left: -52px;
+left: 100px;
 z-index: 2;
 
 }
 #pawn2{   
     position: relative;
-    top: 40px;    
+    top: 50px;    
     transition: all linear 0.5s;
-    left: -152px;
+    left: -25px;
     z-index: 2;
     background-color: blue;
     
