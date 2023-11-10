@@ -139,6 +139,20 @@ font-weight: bold;
     font-size: 20px;
     font-weight: bold 
 }
+
+.reset:hover{
+    width: 10em;
+    height: 3em;
+    border-radius: 6px;
+    cursor: pointer;
+    background-color: rgb(12, 191, 12);
+    color: whitesmoke;
+    font-size: 20px;
+    font-weight: bold 
+}
+
+
+
 .quit{
     width: 10em;
     height: 3em;
