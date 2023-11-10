@@ -88,6 +88,27 @@ z-index: 2;
     font-size: 18px;
     font-weight: bolder;
 }
+
+.dice:hover{
+    width :6em;
+    height: 6em;
+    color: black;
+    background-color: whitesmoke;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-left: 9em;
+    font-size: 18px;
+    font-weight: bolder;
+}
+
+.dice:active{
+    transform: translate(2px);
+}
+
+
+
+
+
 #player1, #player2{
 height: 2em;
 width: 20em;
