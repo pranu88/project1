@@ -89,8 +89,8 @@ let currentpawn = pawn1
 function roll(){
     
     // assign text input to variable
-    let p1 = document.getElementById('player1').value
-    let p2 = document.getElementById('player2').value     
+    let p1 = document.getElementById('player1').value.trim()
+    let p2 = document.getElementById('player2').value.trim()    
     player1.name = p1
     player2.name = p2
     // pawn movements
@@ -103,14 +103,14 @@ function roll(){
     // dicevalue.innerHTML = num;
 
     // chechk for text input is empty
-    if(!player1.name || !player2.name){
-        alert(`Please enter player name `)
-    } else if(player1.name === player2.name){
-        alert(`Please enter different names for each player`)
+    if(!player1.name || !player2.name || player1.name === "" || player2.name === ""){
+        alert(`Please enter player name `)        
+       } else if(player1.name === player2.name){
+        alert(`Please enter different names for each player`)        
     }
     else{
         dicevalue.innerHTML = num;
-    play(currentPlayer,currentpawn,num)
+        play(currentPlayer,currentpawn,num)
     }
     // console.log('player:' + currentPlayer)
     if(currentPlayer.position === 36){
