@@ -100,10 +100,18 @@ function roll(){
     let num = Math.floor(Math.random()*(6 - 1)+ 1)  
     // display dice value
     
-    dicevalue.innerHTML = num;
-    
+    // dicevalue.innerHTML = num;
+
+    // chechk for text input is empty
+    if(!player1.name || !player2.name){
+        alert(`Please enter player name `)
+    } else if(player1.name === player2.name){
+        alert(`Please enter different names for each player`)
+    }
+    else{
+        dicevalue.innerHTML = num;
     play(currentPlayer,currentpawn,num)
-    // 
+    }
     // console.log('player:' + currentPlayer)
     if(currentPlayer.position === 36){
         message(`${currentPlayer.name} is winner!`)
@@ -117,6 +125,9 @@ function roll(){
 
 
 }
+
+
+
     // ===========================================
    // function for play
  
@@ -158,24 +169,30 @@ function roll(){
     
 if (player.position in col1){   
     pawn.style.left='200px'  
+    // pawn.style.left='140% ' 
     if (pawn === pawn2){   
     pawn.style.left = '75px'
+    // pawn.style.left = '4.6875%'
     }
 }
 if (player.position in col2){   
     pawn.style.left = '300px'
+    // pawn.style.left = '200%'
     if (pawn === pawn2){
     pawn.style.left = '175px'
+    // pawn.style.left = '10.9375%'
     }
 }
 if (player.position in col3){   
     pawn.style.left = '400px'
+    // pawn.style.left = '260%'
     if (pawn === pawn2){    
     pawn.style.left = '275px'
     }
 }
 if (player.position in col4){    
     pawn.style.left = '500px'
+    // pawn.style.left = '320%'
     if (pawn === pawn2)
     {
        
@@ -184,6 +201,7 @@ if (player.position in col4){
 if (player.position in col5){
     
     pawn.style.left = '600px'
+    // pawn.style.left = '380%'
     if (pawn === pawn2)
     {        
        pawn.style.left = '475px'
@@ -191,6 +209,7 @@ if (player.position in col5){
 }
 if (player.position in col6){    
     pawn.style.left = '700px'
+    // pawn.style.left = '440%'
     if (pawn === pawn2)
     {    
         pawn.style.left = '575px'
