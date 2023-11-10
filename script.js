@@ -104,9 +104,11 @@ function roll(){
 
     // chechk for text input is empty
     if(!player1.name || !player2.name || player1.name === "" || player2.name === ""){
-        alert(`Please enter player name `)        
+        alert(`Please enter player name `) 
+        reset()               
        } else if(player1.name === player2.name){
-        alert(`Please enter different names for each player`)        
+        alert(`Please enter different names for each player`) 
+        reset()       
     }
     else{
         dicevalue.innerHTML = num;
