@@ -134,7 +134,7 @@ function roll(){
    // function for play
  
    function play(player,pawn, moves){
-    cPlayer.textContent = `${currentPlayer.name} turn` 
+    cPlayer.textContent = `${player.name}'s turn` 
     player.position += moves
 
     let pawn1 = document.getElementById('pawn1')
