@@ -257,5 +257,11 @@ function reset(){
 
 // funtion to quit page
 function quit(){
+    let text = "Would you like to quit?"
+    if(confirm(text) == true){        
     window.close()
+    }
+    else{
+        message(`You choosed to continue!`)
+    }
 }
