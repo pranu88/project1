@@ -119,6 +119,21 @@ margin-left: 2em;
 font-size: 18px;
 font-weight: bold;
 }
+
+#player1:hover, #player2:hover{
+    height: 2em;
+    width: 20em;
+    background-color: rgb(82, 199, 238);
+    border-radius: 6px;
+    margin-top: 2em;
+    margin-left: 2em;
+    font-size: 18px;
+    font-weight: bold;
+    }
+
+
+
+
 #cp{
     font-size: 25px;
 }
