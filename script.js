@@ -252,7 +252,13 @@ quitbtn.addEventListener('click',quit)
 
 // function for reloading page
 function reset(){
+    let text = "Would you like to reset?"
+    if(confirm(text) == true){
     location.reload()
+}
+else{
+    message(`You choosed to continue with GAME!`)
+}
 }
 
 // funtion to quit page
