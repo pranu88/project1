@@ -20,7 +20,7 @@ const ladders = {
     19:31
     }
 
-// columns to check
+// columns objects to check
 const col1 = {
     1:true,
     12:true,
@@ -96,11 +96,9 @@ function roll(){
     // pawn movements
     let pawn1 = document.getElementById('pawn1')
     let pawn2 = document.getElementById('pawn2')
+
     // dice value
-    let num = Math.floor(Math.random()*(6 - 1)+ 1)  
-    // display dice value
-    
-    // dicevalue.innerHTML = num;
+    let num = Math.floor(Math.random()*(6 - 1)+ 1)      
 
     // chechk for text input is empty
     if(!player1.name || !player2.name || player1.name === "" || player2.name === ""){
@@ -111,6 +109,7 @@ function roll(){
 
     }
     else{
+         // display dice value
         dicevalue.innerHTML = num;
         play(currentPlayer,currentpawn,num)
         if(currentPlayer.position === 36){
@@ -149,11 +148,14 @@ function roll(){
         message(`dice value is morethan expected! ${player.name} will remain in ${player.position} `)
      }
      else if(player.position <= 36){
+
+        // chack for snakes
      if (player.position in snakes){
         player.position = snakes[player.position]        
         message(`${player.name} encountered snake moving back to ${player.position}`)
        
      }
+    //  check for ladders
      else if(player.position in ladders){
         player.position = ladders[player.position]        
         message(`${player.name} climbed ladder moved to ${player.position}`)
@@ -169,31 +171,25 @@ function roll(){
     // check player position in columns
     
 if (player.position in col1){   
-    pawn.style.left='200px'  
-    // pawn.style.left='140% ' 
+    pawn.style.left='200px'   
     if (pawn === pawn2){   
-    pawn.style.left = '75px'
-    // pawn.style.left = '4.6875%'
+    pawn.style.left = '75px'   
     }
 }
 if (player.position in col2){   
-    pawn.style.left = '300px'
-    // pawn.style.left = '200%'
+    pawn.style.left = '300px'    
     if (pawn === pawn2){
-    pawn.style.left = '175px'
-    // pawn.style.left = '10.9375%'
+    pawn.style.left = '175px'    
     }
 }
 if (player.position in col3){   
-    pawn.style.left = '400px'
-    // pawn.style.left = '260%'
+    pawn.style.left = '400px'    
     if (pawn === pawn2){    
     pawn.style.left = '275px'
     }
 }
 if (player.position in col4){    
-    pawn.style.left = '500px'
-    // pawn.style.left = '320%'
+    pawn.style.left = '500px'    
     if (pawn === pawn2)
     {
        
@@ -201,16 +197,14 @@ if (player.position in col4){
 }
 if (player.position in col5){
     
-    pawn.style.left = '600px'
-    // pawn.style.left = '380%'
+    pawn.style.left = '600px'    
     if (pawn === pawn2)
     {        
        pawn.style.left = '475px'
     }
 }
 if (player.position in col6){    
-    pawn.style.left = '700px'
-    // pawn.style.left = '440%'
+    pawn.style.left = '700px'    
     if (pawn === pawn2)
     {    
         pawn.style.left = '575px'
@@ -240,9 +234,9 @@ else if ((rownum === 5) || (player.position == 36)){
 }
 
 
-     }
+}
 
-   }
+}
 
 dicebtn.addEventListener('click',roll)
 resetbtn.addEventListener('click',reset)
