@@ -211,7 +211,7 @@ if (player.position in col6){
     }
 }
 
-// chech player position in rows
+// check player position in rows
 let rownum = Math.floor(player.position / 6);
 
 if ((rownum === 0) || (player.position == 6)){
