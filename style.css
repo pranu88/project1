@@ -1,19 +1,12 @@
 body{
     background-color: rgb(52, 150, 192);
     display: flex;
-    align-items: center;
-    /* display: grid; */
-    /* place-items: center; */
-    /* overflow: hidden; */
-    /* grid-template-columns: auto auto; */
-    
+    align-items: center;    
 }
 
-.playerInfo{
-    /* border: solid black; */
+.playerInfo{    
     height: 37em;
-    width: 30%;  
-    /* background-color: aquamarine; */
+    width: 30%;      
     margin-right: 3px;
 }
 .gridContainer{
@@ -23,8 +16,7 @@ body{
     background-color: aquamarine;
     margin-left: 20px;
     display: grid;    
-    grid-template-columns: repeat(6 ,1fr);
-    /* position: absolute; */
+    grid-template-columns: repeat(6 ,1fr);    
     background: url("https://www.playscapeengineering.co.uk/wp-content/uploads/2015/10/Snakes-Ladders-1-36-Solid-800x600.jpg") transparent;
     background-position: center;
     
@@ -34,12 +26,6 @@ body{
     border: solid black;
     z-index: -1;
 }
-/* img{
-    position: absolute;
-    z-index: 1;
-    
-
-} */
 
 
 #pawn1,#pawn2{
@@ -52,11 +38,9 @@ body{
 
 #pawn1{
 position: relative;
-/* top: 50px; */
-top: 30%;
+top: 50px;
 transition: all linear 0.5s;
-/* left: 100px; */
-left: 80%;
+left: 100px;
 z-index: 2;
 
 }
@@ -70,12 +54,10 @@ z-index: 2;
     
 }
 #dicevalue{
-    width :50px;
-    /* height: 50px; */
+    width :50px;   
     text-align: center;
     font-size: 34px;
-    margin-left: 6em;
-    /* margin-top: 2em; */
+    margin-left: 6em;    
 }
 .dice{
     width :6em;

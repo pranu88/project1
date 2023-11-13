@@ -105,16 +105,19 @@ function roll(){
     // chechk for text input is empty
     if(!player1.name || !player2.name || player1.name === "" || player2.name === ""){
         alert(`Please enter player name `) 
-        reset()               
+        // reset()               
+
        } else if(player1.name === player2.name){
         alert(`Please enter different names for each player`) 
-        reset()       
+        // reset()       
+
     }
     else{
         dicevalue.innerHTML = num;
         play(currentPlayer,currentpawn,num)
+        
     }
-    // console.log('player:' + currentPlayer)
+
     if(currentPlayer.position === 36){
         message(`${currentPlayer.name} is winner!`)
         dicebtn.disabled = true
@@ -124,7 +127,7 @@ function roll(){
         currentPlayer = currentPlayer === player1 ? player2 : player1
         currentpawn = currentpawn === pawn1 ? pawn2 : pawn1
     }
-
+    
 
 }
 
