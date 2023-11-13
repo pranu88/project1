@@ -104,36 +104,32 @@ function roll(){
 
     // chechk for text input is empty
     if(!player1.name || !player2.name || player1.name === "" || player2.name === ""){
-        alert(`Please enter player name `) 
-        // reset()               
+        alert(`Please enter player name `)                      
 
        } else if(player1.name === player2.name){
-        alert(`Please enter different names for each player`) 
-        // reset()       
+        alert(`Please enter different names for each player`)             
 
     }
     else{
         dicevalue.innerHTML = num;
         play(currentPlayer,currentpawn,num)
+        if(currentPlayer.position === 36){
+            message(`${currentPlayer.name} is winner!`)
+            dicebtn.disabled = true
+        }
         
-    }
-
-    if(currentPlayer.position === 36){
-        message(`${currentPlayer.name} is winner!`)
-        dicebtn.disabled = true
-    }
-    
-    else{
-        currentPlayer = currentPlayer === player1 ? player2 : player1
-        currentpawn = currentpawn === pawn1 ? pawn2 : pawn1
-    }
-    
+        else{
+            currentPlayer = currentPlayer === player1 ? player2 : player1
+            currentpawn = currentpawn === pawn1 ? pawn2 : pawn1
+        }       
+        
+    }   
 
 }
 
 
 
-    // ===========================================
+   // ===========================================
    // function for play
  
    function play(player,pawn, moves){
