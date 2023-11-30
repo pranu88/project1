@@ -13,7 +13,9 @@ Instructions to follow:
 
 GAME LINK:
 
-http://127.0.0.1:5500/index.html
+https://snake-and-ladder-z1yj.onrender.com
+
+<!-- http://127.0.0.1:5500/index.html -->
 
 copy the above link and paste it in your browser to start the game.
 
